@@ -5,8 +5,8 @@ import pandas as pd
 import pytorch_lightning as pl
 from matplotlib import pyplot as plt
 
-from deep_learning_for_time_series.MQRNN.mqrnn_model import MQRNNModel
-from deep_learning_for_time_series.MQRNN.electricity_load_dataset import ElectricityLoadDataModule
+from deep_learning_for_time_series.multi_horizon_quantile_rnn.mqrnn_model import MQRNNModel
+from deep_learning_for_time_series.multi_horizon_quantile_rnn.electricity_load_dataset import ElectricityLoadDataModule
 
 matplotlib.use('TkAgg')
 plt.style.use("bmh")
