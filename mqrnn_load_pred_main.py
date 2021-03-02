@@ -12,7 +12,7 @@ matplotlib.use('TkAgg')
 plt.style.use("bmh")
 plt.rcParams["figure.figsize"] = (6, 6)
 
-DATA_DIR = pathlib.Path('../../yandex/data/')
+DATA_DIR = pathlib.Path('../data/')
 eldata = pd.read_parquet(DATA_DIR.joinpath("LD2011_2014.parquet"))
 eldata = eldata.resample("1H", on="timestamp").mean()
 
