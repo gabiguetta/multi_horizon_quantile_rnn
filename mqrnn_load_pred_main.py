@@ -21,11 +21,15 @@ dm = ElectricityLoadDataModule(scaled_data, samples=100, batch_size=128)
 dm.setup()
 hist_len = 168
 fct_len = 24
-model = MQRNNModel(fct_len=fct_len)
 
-trainer = pl.Trainer(max_epochs=25, progress_bar_refresh_rate=1, auto_select_gpus=True)
-trainer.fit(model, dm)
-
+test = True
+if test:
+    model = MQRNNModel.load_from_checkpoint('lightning_logs/version_80/checkpoints/epoch=24-step=5074.ckpt')
+    model.eval()
+else:
+    model = MQRNNModel(fct_len=fct_len)
+    trainer = pl.Trainer(max_epochs=25, progress_bar_refresh_rate=1, auto_select_gpus=True)
+    trainer.fit(model, dm)
 
 # TEST
 dm.setup(stage="test")
