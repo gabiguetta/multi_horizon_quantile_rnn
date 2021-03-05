@@ -24,7 +24,7 @@ fct_len = 24
 
 test = True
 if test:
-    model = MQRNNModel.load_from_checkpoint('lightning_logs/version_80/checkpoints/epoch=24-step=5074.ckpt')
+    model = MQRNNModel.load_from_checkpoint('epoch=24-step=5074.ckpt')
     model.eval()
 else:
     model = MQRNNModel(fct_len=fct_len)

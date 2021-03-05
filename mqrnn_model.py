@@ -7,7 +7,7 @@ from torch import nn
 LSTM_DEPTH = 30
 LSTM_NUM_LAYERS = 2
 COVARIATE_SIZE = 3  # for yearly. monthly, daily
-DYNAMIC_CONTEXT_SIZE = 5
+DYNAMIC_CONTEXT_SIZE = 8
 STATIC_CONTEXT_SIZE = 10
 
 
