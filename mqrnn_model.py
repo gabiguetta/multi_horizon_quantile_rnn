@@ -31,7 +31,7 @@ class MQRNNEncoder(pl.LightningModule):
 
 
 class MQRNNDecoder(pl.LightningModule):
-    """Encoder network for encoder-decoder forecast model."""
+    """Decoder network for encoder-decoder forecast model."""
 
     def __init__(self, hidden_in_len: int, future_len: int, covariate_size: int,
                  dynamic_context_size: int, static_context_size: int, quantile_size: int):
@@ -80,7 +80,7 @@ class MQRNNDecoder(pl.LightningModule):
 
 
 class MQRNNModel(pl.LightningModule):
-    """Encoder network for encoder-decoder forecast model."""
+    """MQRNN forecast model."""
 
     def __init__(self, fct_len: int = 24, encoder_num_layers: int = LSTM_NUM_LAYERS,
                  encoder_hidden_units: int = LSTM_DEPTH, lr: float = 1e-3, quantiles=None):
