@@ -5,14 +5,14 @@ import pandas as pd
 import pytorch_lightning as pl
 from matplotlib import pyplot as plt
 
-from deep_learning_for_time_series.multi_horizon_quantile_rnn.mqrnn_model import MQRNNModel
-from deep_learning_for_time_series.multi_horizon_quantile_rnn.electricity_load_dataset import ElectricityLoadDataModule
+from multi_horizon_quantile_rnn.mqrnn_model import MQRNNModel
+from multi_horizon_quantile_rnn.electricity_load_dataset import ElectricityLoadDataModule
 
 matplotlib.use('TkAgg')
 plt.style.use("bmh")
 plt.rcParams["figure.figsize"] = (6, 6)
 
-DATA_DIR = pathlib.Path('../data/')
+DATA_DIR = pathlib.Path('data/')
 eldata = pd.read_parquet(DATA_DIR.joinpath("LD2011_2014.parquet"))
 eldata = eldata.resample("1H", on="timestamp").mean()
 
